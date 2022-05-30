@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin     : 0;
+    padding    : 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.newft {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 4px 10px;
+}
+
+#fotoaqui {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("");
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+body::-webkit-scrollbar {
+    width : 11px;
+    border: 1px rgb(200, 200, 200);
+    background-color: #ff007f;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius   : 5px;
+    background-color: #000;
+}
+
+header {
+    position  : fixed;
+    background: black;
+    padding   : 20px;
+    width     : 100%;
+    height    : 30px;
+}
+
+.left h3 {
+    color         : #fff;
+    margin-left   : 3%;
+    text-transform: uppercase;
+    font-size     : 22px;
+    font-weight   : 800;
+}
+
+.left span {
+    color: #ff007f;
+}
+
+.sidebar {
+    position           : fixed;
+    width              : 15.625rem;
+    height             : 100vh;
+    margin-top         : 70px;
+    padding-top        : 30px;
+    left               : 0;
+    background         : black;
+    transition         : 0.5s;
+    transition-property: left;
+}
+
+.sidebar .image {
+    width        : 100px;
+    height       : 100px;
+    border-radius: 100px;
+}
+
+.sidebar h2 {
+    color        : #ccc;
+    margin-top   : 0;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color              : #fff;
+    display            : block;
+    width              : 100%;
+    line-height        : 60px;
+    text-decoration    : none;
+    padding-left       : 40px;
+    box-sizing         : border-box;
+    transition         : 0.5s;
+    transition-property: background;
+}
+
+.sidebar a:hover {
+    background: #ff007f;
+}
+
+#registro {
+    background: #ff007f;
+}   
+
+.sidebar ion-icon {
+    padding-right: 10px;
+}
+
+label #sidebar_btn {
+    z-index            : 1;
+    position           : fixed;
+    left               : 15%;
+    color              : #fff;
+    font-size          : 25px;
+    margin             : 5px 0;
+    cursor             : pointer;
+    transition         : 0.5s;
+    transition-property: color;
+}
+
+label #sidebar_btn2{
+    z-index            : 1;
+    position           : fixed;
+    left               : 15%;
+    color              : #fff;
+    font-size          : 25px;
+    margin             : 5px 0;
+    cursor             : pointer;
+    transition         : 0.5s;
+    transition-property: color;
+}
+
+
+
+label .sidebar_btn:hover {
+    color: #ff007f;
+}
+
+#check:checked~.sidebar {
+    left: -190px;
+}
+
+#check:checked~.sidebar .conteiner_grafico {
+    background-color: #ff007f;
+}
+
+#check:checked~.sidebar a span {
+    display: none;
+}
+
+#check:checked~.sidebar a {
+    font-size  : 20px;
+    margin-left: 170px;
+    width      : 80px;
+}
+
+#check:checked~.content {
+    margin-left: 250px;
+
+}
+
+#check {
+    display: none;
+}
+
+#ocorrencia{
+    background-color: #ff007f;
+}
+
+.bemVindo{
+    width: 100%;
+    height: 10vh;
+    background-color: aqua;
+}
+.bemVindo span{
+    color: #fff;
+    font-size: 20px;
+}
+
+.dashboardContainer {
+    height        : 80vh;
+    padding-left  : 20%;
+    padding-top   : 100px;  
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.servicoMaquina{
+    width: 90%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: .5rem;
+    box-shadow: 0px 3px 10px #ccc;
+}
+.servicoMaquina .line {
+    width: .08rem;
+    height: 2.5rem;
+    background-color: black;
+}
+.inputFiltroContainer {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}   
+.inputFiltro {
+    height: .2rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: .5rem;
+    box-shadow: 0px 3px 10px #ccc;
+    padding: 1.7rem;
+}
+.title-input {
+    display: flex;
+    flex-direction: column;
+}
+.inputFiltro label {
+    font-size: 20px;
+}
+.inputFiltro input {
+    width: 18rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+}
+.inputFiltro input::placeholder {
+    font-size: 16px;   
+}
+.inputFiltro ion-icon {
+    width: 2rem;
+    height: 2rem;
+}
+<<<<<<< HEAD
+#labelLixeira{
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .sidebar span, .sidebar img, .sidebar h2, label #sidebar_btn, label #sidebar_btn2 {
+=======
+@media (max-width: 1200px){
+    .sidebar span, .sidebar #fotoaqui, .sidebar h2, label #sidebar_btn, label #sidebar_btn2 {
+>>>>>>> 5866092b16b4b99594f63eabc3ca1187933a8c18
+        display: none;
+    }
+    .sidebar {
+        position           : fixed;
+        width              : 80px;
+        height             : 100%;
+        margin-top         : 70px;
+        padding-top        : 30px;
+        left               : 0;
+        background         : black;
+        transition         : 0.5s;
+        transition-property: left;
+    } 
+
+    .dashboardContainer {
+        height        : 100vh;
+        padding-left  : 10%; 
+        
+        /* padding-top   : 100px;
+        padding-bottom: 3%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .servicoMaquina{
+        margin-top: -30%;
+    }
+    .inputFiltro{
+        margin-top: 8%;
+    }
+
+    .content{
+        margin-top: 5%;
+        margin-left: 1%;
+    }
+
+
+
+
+}      
+@media (max-width: 760px) {
+    .sidebar span, .sidebar #fotoaqui, .sidebar h2, label #sidebar_btn, label #sidebar_btn2 {
+        display: none;
+    } 
+    .sidebar {
+        position           : fixed;
+        width              : 80px;
+        height             : 100%;
+        margin-top         : 70px;
+        padding-top        : 30px;
+        left               : 0;
+        background         : black;
+        transition         : 0.5s;
+        transition-property: left;
+    }
+    .dashboardContainer {
+        height        : 100%;
+        padding-left  : 95px;
+        padding-top   : 100px;
+        padding-bottom: 3%;
+    }
+    .servicoMaquina {
+        width: 60%;
+        height: 17vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .line {
+        display: none;
+    }
+    .inputFiltro {
+        height: 1.7rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    .inputFiltro label {
+        font-size: 10px;
+    }
+    .inputFiltro input {
+        width: 10rem;
+    }
+    .inputFiltro input::placeholder {
+        font-size: 12px;   
+    }
+    .inputFiltro ion-icon {
+        width: 1rem;
+        height: 1rem;
+    }
+    .inputFiltroContainer {
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    .dashboardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.rTable {
+    width: 100%;
+    text-align: center;
+}
+.rTable thead {
+    background-color: #60DFFF;
+    font-weight: bold;
+    color: white;
+    height: 4rem;
+}
+.rTable tbody tr:nth-child(2n) {
+    background-color: #ccc;
+}
+.rTable th, .rTable td {
+    padding: .4rem 0;
+}
+
+#spanRegistro img{
+    width: 2vw;
+}
+
+#spanRegistro {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 760px) {
+    .content {
+        width: 80%;
+    }
+    .rTable thead {
+        display: none;
+    }
+    .rTable tbody td {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .content {
+        width: 90%;
+
+    }
+    .rTable tbody tr td:nth-child(1) {
+        width: 12%;
+    }
+    .rTable tbody tr td:nth-child(2) {
+        width: 12%;
+    }
+    .rTable tbody tr td:nth-child(3) {
+        width: 12%;
+    }
+    .rTable tbody tr td:nth-child(4) {
+        width: 16%;
+    }
+    .rTable tbody tr td:nth-child(5) {
+        width: 30%;
+    }
+    .rTable tbody tr td:nth-child(6) {
+        width: 30%;
+    }
+}
+
+
+

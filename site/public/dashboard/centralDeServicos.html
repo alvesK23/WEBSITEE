@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Call++</title>
+    <link rel="stylesheet" href="../assets/css/centralServico.css">
+    <link rel="shortcut icon" href="../assets/img/monitoramento.png" type="image/x-icon">
+    <script src="../js/funcoes.js"></script>
+    <script src="./js/foto2.js"></script>
+    <script>
+        window.fwSettings = {
+            'widget_id': 73000003121
+        };
+        !function () { if ("function" != typeof window.FreshworksWidget) { var n = function () { n.q.push(arguments) }; n.q = [], window.FreshworksWidget = n } }() 
+    </script>
+    <script type='text/javascript' src='https://widget.freshworks.com/widgets/73000003121.js' async defer></script>
+</head>
+
+<body onload="validarSessao();fotocarrega()">
+    <input type="checkbox" id="check">
+    <!--header começo-->
+    <header>
+        <label for="check" id="label_ion">
+            <ion-icon name="menu-outline" id="sidebar_btn" onclick="recolher()"></ion-icon>
+            <ion-icon name="menu-outline" id="sidebar_btn2" onclick="expandir()"></ion-icon>
+        </label>
+        <div class="left">
+            <h3>Call <span>++</span></h3>
+        </div>
+        <!-- <div class="right">
+            <a href="#" class="sair_btn">Sair</a>
+        </div> -->
+    </header>
+    <!--header final-->
+    <!--sidebar começo-->
+    <div class="sidebar" id="sidebar">
+        <center>
+            <div id="fotoaqui"></div>
+            <!--  <button onclick="window.location.href ='inicio.html#editandoft'" class="newft">New foto</button> </div>-->
+            <h2><span id="b_usuario">Seu Nome</span></h2>
+        </center>
+        <a href="inicio.html" data-tooltip="Dashboard" id="inicio">
+            <ion-icon name="home-outline"></ion-icon><span>Dashboard</span>
+        </a>
+
+        <a href="registro.html" data-tooltip="Ocorrências">
+            <ion-icon name="folder-outline"></ion-icon><span>Ocorrências</span>
+        </a>
+
+        <a href="#" data-tooltip="Resolução" id="resolucao">
+            <ion-icon name="build-outline"></ion-icon><span>Resolução</span>
+        </a>
+        <a onclick="limparSessao()" data-tooltip="Sair">
+            <ion-icon name="exit-outline"></ion-icon><span>Sair</span>
+        </a>
+    </div>
+
+
+    <!--sidebar final-->
+
+
+    <div class="conteiner_central_de_derviços">
+        <div id="conteudo">
+            <div class="titulo_central">
+                <h1>Central de Serviços</h1>
+            </div>
+
+            <div class="div_matricula">
+                <span>
+                    Matricula:
+                </span>
+                <input type="text" id="MatriculaInput">
+            </div>
+
+            <div class="div_identificação">
+                <span>
+                    Id do problema:
+                </span>
+                <input type="text" id="IdProblemaInput">
+            </div>
+
+            <div class="div_problema">
+                <span>
+                    Fim do problema
+                </span>
+                <input id="dataFimProblema" type="datetime-local" >
+            </div>
+
+            <div class="div_descrição">
+                <span>
+                    Solução:
+
+                </span>
+                <input type="text" id="SolucaoInput">
+                <!-- <textarea cols="30" rows="10"></textarea> -->
+
+            </div>
+
+            <div>
+                <button class="btn_registrar_serviços" onclick="registrar()">
+                    Registrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
+
+<script>
+
+    sidebar_btn2.style.display = "none"
+    sidebar.style.background = "black";
+
+    function recolher() {
+        sidebar.style.background = "black";
+        conteudo.style.paddingLeft = "300px"
+        conteudo.style.transition = "0.8s"
+        sidebar_btn.style.display = "none"
+        sidebar_btn2.style.display = "block"
+        document.getElementById("fotoaqui").style.display = "none"
+
+
+    }
+
+    function expandir() {
+        sidebar.style.background = "black";
+        conteudo.style.paddingLeft = "500px"
+        conteudo.style.transition = "0.8s"
+        sidebar_btn.style.display = "block"
+        sidebar_btn2.style.display = "none"
+        document.getElementById("fotoaqui").style.display = "block"
+
+    }
+
+
+</script>
+
+<script src="./js/foto.js"></script>
+
+<script>
+    function registrar() {
+        
+        var Matricula = MatriculaInput.value;
+        var ProblemaId = IdProblemaInput.value;
+        var dataFim = dataFimProblema.value;
+        var dataG =  dataFim + ':00';
+        var SolucaoDada = SolucaoInput.value;
+        
+        console.log(Matricula);
+        console.log(ProblemaId);
+        console.log(SolucaoDada);
+        console.log(dataG);
+        
+        if (Matricula == null) {
+            console.log("Sua Matricula está vazio!")
+        } else if (ProblemaId == null) {
+            console.log("Seu Id do Problema está vazio!")
+        } else if (dataFim == null) {
+            console.log("Sua Data de Termino está vazia!")
+        } else if (SolucaoDada == null) {
+            console.log("Sua Solução está vazia!")
+        } else {
+            fetch("/centralDeServicos/registrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    matricula: Matricula,
+                    idproblema: ProblemaId,
+                    data: dataG,
+                    solucao: SolucaoDada
+                })
+            })
+            alert("registro alterado com sucesso");
+            window.location.href = "registro.html";
+        }
+
+    }
+</script>

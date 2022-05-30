@@ -1,0 +1,193 @@
+.conteudo {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    background: #fafafa;
+    opacity: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: 0px 3px 10px #1C658C;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form:hover {
+    box-shadow: 0px 3px 10px #01070a;
+}
+
+.form span {
+    color: #190159;
+    font-size: 27px;
+    font-family: montserrat;
+}
+
+.form input {
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #190159;
+}
+
+.form input:hover {
+    border-bottom: 1px solid #60DFFF;
+}
+
+input::placeholder {
+    color: #190159;
+}
+
+
+.form__coluna {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.subConteinerForm{
+    display: flex;
+    width: 100%;
+    height: auto;
+    background: #fafafa;
+    opacity: 2;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.coluna{
+    flex-direction: column;
+    display: flex;
+    padding: 20px 0px 20px 0px;
+}
+
+.div_botao{
+    width: 300px;
+    height: 52px;
+}
+
+input::placeholder {
+    color: #00000057;    
+  }
+
+span {
+    margin-bottom: 10px;
+}
+
+.form button {
+    width: 100%;
+    height: 35px;
+    border: none;
+    outline: none;
+    font-size: 26px;
+    font-family: montserrat;
+    border-radius: 10px;
+    color: #333;
+    background: #60DFFF;
+    cursor: pointer;
+}
+
+.form button:hover {
+
+    background: linear-gradient(140deg,
+            #F63CFF, #60DFFF, #60DFFF);
+}
+
+.loading-div {
+    width: 50px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    margin: auto;
+    display: none;
+    top: 100px;
+}
+
+.loading-div img {
+    height: 100px;
+    width: 100px;
+}
+
+
+
+/*           login  abaixo           */
+
+.form_login {
+    width: auto;
+    height: auto;
+    background: #fff;
+    box-shadow: 0px 3px 10px #1C658C;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.form_login:hover {
+    box-shadow: 0px 3px 10px #01070a;
+}
+
+.form_login .container {
+    background: transparent;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+}
+
+.container h3 {
+    color: black;
+    padding: 0 0 26px 0;
+}
+
+.form_login button {
+    padding: 10px 60px 10px 60px;
+    border: none;
+    outline: none;
+    font-size: 26px;
+    font-family: montserrat;
+    border-radius: 10px;
+    color: #fff;
+    background: #1C658C;
+    cursor: pointer;
+}
+
+
+.form_login button:hover {
+
+    background: black;
+}
+
+
+.form_login input {
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #190159;
+    padding-bottom: 20px;
+}
+
+.form_login input:hover {
+    border-bottom: 1px solid #60DFFF;
+}
+
+.form_login input::placeholder {
+    color: #190159;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/registro.css">
+    <link rel="shortcut icon" href="../assets/img/monitoramento.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/modal.css">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <title>Registro | Call++</title>
+    <script src="../js/funcoes.js"></script>
+    <script src="./js/foto2.js"></script>
+    <script>
+        window.fwSettings = {
+            'widget_id': 73000003121
+        };
+        !function () { if ("function" != typeof window.FreshworksWidget) { var n = function () { n.q.push(arguments) }; n.q = [], window.FreshworksWidget = n } }() 
+    </script>
+    <script type='text/javascript' src='https://widget.freshworks.com/widgets/73000003121.js' async defer></script>
+
+</head>
+
+<body onload="validarSessao();fotocarrega();FKEMPRESA();listar()">
+    <input type="checkbox" name="dialog_state" id="dialog_state" class="dialog_state">
+    <div id='dialog'>
+        <label id="dlg-back" for="dialog_state"></label>
+        <div id='dlg-wrap'>
+            <label id="dlg-close" for="dialog_state"><i class="icon ion-ios-close-empty"></i></label>
+            <h2 id='dlg-header'>Apagar registro?</h2>
+            <div id='dlg-content'>Ao apagar esse registro ele irá ser excluido sem a possibilidade de volta</div>
+            <div id='dlg-prompt'>
+                <button class='button positive' onclick="deletarPeloId()">Apagar</button>
+                <button class='button close' onclick="recarregar()">Voltar</button>
+            </div>
+        </div>
+    </div>
+    
+    <input type="checkbox" id="check">
+    <!--header começo-->
+    <header>
+        <label for="check">
+            <ion-icon name="menu-outline" id="sidebar_btn" onclick="recolher()"></ion-icon>
+            <ion-icon name="menu-outline" id="sidebar_btn2" onclick="expandir()"></ion-icon>
+        </label>
+
+        <div class="left">
+            <h3>Call <span>++</span></h3>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <center>
+            <div> <span id="fotoaqui"></span></div>
+            <h2><span id="b_usuario">Seu Nome</span></h2>
+        </center>
+        <a href="inicio.html" data-tooltip="Dashboard" id="inicio">
+            <ion-icon name="home-outline"></ion-icon><span>Dashboard</span>
+        </a>
+        <a href="#" data-tooltip="Ocorrências" id="ocorrencia">
+            <ion-icon name="folder-outline"></ion-icon><span>Ocorrências</span>
+        </a>
+        <a href="centralDeServicos.html" data-tooltip="Resolução">
+            <ion-icon name="build-outline"></ion-icon><span>Resolução</span>
+        </a>
+        <a onclick="limparSessao()" data-tooltip="Sair">
+            <ion-icon name="exit-outline"></ion-icon><span>Sair</span>
+        </a>
+    </div>
+
+    <div class="dashboardContainer" id="conteudo">
+
+        <div class="servicoMaquina">
+
+            <div class="divServico">
+                <ion-icon name="warning-outline"></ion-icon><span>Novos</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="divServico">
+                <ion-icon name="time-outline"></ion-icon><span>Em andamento</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="divServico">
+                <span>Finalizado</span>
+            </div>
+
+        </div>
+        <div class="inputFiltroContainer">
+            <div class="inputFiltro">
+                <input type="text" placeholder="Número do chamado" id="buscarPeloId">
+                <ion-icon name="search-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="content">
+            <table class="rTable">
+                <thead>
+                    <tr>
+                        <th>Chamado</th>
+                        <th>Solucionador</th>
+                        <th>HOSTNAME</th>
+                        <th>Data | Hora Inicio</th>
+                        <th>Data | Hora Fim</th>
+                        <th>Problema</th>
+                        <th>Solução</th>
+                        <th>deletar</th>
+                    </tr>
+                </thead>
+
+                <tbody id="spanRegistro">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    sidebar_btn2.style.display = "none"
+    function recolher() {
+
+        conteudo.style.paddingLeft = "100px"
+        conteudo.style.transition = "0.8s"
+        sidebar_btn.style.display = "none"
+        sidebar_btn2.style.display = "block"
+        document.getElementById("fotoaqui").style.display = "none";
+    }
+    function expandir() {
+
+        conteudo.style.paddingLeft = "271px"
+        conteudo.style.transition = "0.5s"
+        sidebar_btn.style.display = "block"
+        sidebar_btn2.style.display = "none"
+        document.getElementById("fotoaqui").style.display = "block";
+
+    }
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+<script>
+    var numeroDeletar = 0; 
+
+    function FKEMPRESA() {
+
+        var FKempresa = sessionStorage.FK_EMPRESA;
+        fetch("/registro/fk_empresa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkEmpresa: FKempresa
+            })
+        }).then
+    }
+
+    function listar() {
+        var id = [];
+        var solucionador = [];
+        var hostname = [];
+        var idMaquina = [];
+        var dataInicio = [];
+        var dataFim = [];
+        var problema = [];
+        var solucao = [];
+
+
+
+        fetch("/registro/listar").then(function (res) {
+            res.json().then(function (json) {
+                console.log(json);
+
+                for (let index = 0; index < json.length; index++) {
+                    id.push(json[index].id);
+                    solucionador.push(json[index].matricula);
+                    hostname.push(json[index].hostname);
+                    dataInicio.push(json[index].inicio_problema);
+                    dataFim.push(json[index].fim_problema);
+                    problema.push(json[index].log);
+                    solucao.push(json[index].solucao);
+                }
+
+                for (var cont = 0; cont < solucionador.length; cont++) {
+                    if (solucionador[cont] == undefined) {
+                        solucionador[cont] = '';
+                    }
+
+                }
+                for (var cont = 0; cont < dataFim.length; cont++) {
+                    if (dataFim[cont] == undefined) {
+                        dataFim[cont] = '';
+                    }
+
+                }
+                for (var cont = 0; cont < solucao.length; cont++) {
+                    if (solucao[cont] == undefined) {
+                        solucao[cont] = '';
+                    }
+
+                }
+
+
+
+                for (var i = 0; i < id.length; i++) {
+
+                    spanRegistro.innerHTML += `
+                <tr>
+                        <td onclick="modificar()">${id[i]}</td>
+                        <td onclick="modificar()">${solucionador[i]}</td>
+                        <td onclick="modificar()">${hostname[i]}</td>
+                        <td onclick="modificar()">${dataInicio[i]}</td>
+                        <td onclick="modificar()">${dataFim[i]}</td>
+                        <td onclick="modificar()">${problema[i]}</td>
+                        <td onclick="modificar()">${solucao[i]}</td> 
+                        <td><label id="labelLixeira" for="dialog_state" onclick="pegNum(${id[i]})"><box-icon name='trash'></box-icon></label></td>
+                        
+                        
+                        </tr>
+                        `;
+                    //<td onclick="deletarPeloId(${id[i]})"><img src="../assets/img/DELETARREGISTROS.png"></td>
+                }
+            })
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+
+
+    function modificar() {
+        window.location.href = "centralDeServicos.html";
+    }
+
+    function deletarPeloId() {
+
+        var idDel = numeroDeletar;
+        fetch("/registro/deletarPeloId", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idDeletar: idDel
+            })
+        })
+        window.location.href = "registro.html";
+
+
+
+    }
+    function pegNum(num){
+        numeroDeletar = num;
+        co
+    }
+
+    function recarregar() {
+        window.location.href = "registro.html";
+    }
+
+</script>

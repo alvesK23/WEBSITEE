@@ -1,0 +1,762 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin          : 0;
+    padding         : 0;
+    background-color: #fafafa;
+    overflow-x      : hidden;
+}
+
+body::-webkit-scrollbar {
+    width : 11px;
+    border: 1px rgb(200, 200, 200);
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius   : 5px;
+    background-color: #1C658C;
+}
+
+@font-face {
+    font-family: alexBrush;
+    src        : url(../fontes/AlexBrush-Regular.ttf);
+    font-family: montserrat;
+    src        : url(../fontes/Montserrat-Regular.ttf);
+}
+
+.menu {
+    height          : 10vh;
+    width           : 100%;
+    background-color: #1C658C;
+    display         : flex;
+    position        : fixed;
+    align-items     : center;
+    justify-content : space-between;
+    z-index         : 4;
+}
+
+.divTitulo {
+    width      : 26%;
+    font-size  : 50px;
+    text-align : center;
+    color      : #ffff;
+    font-family: alexBrush;
+    cursor     : default;
+}
+
+
+.container {
+    display        : flex;
+    flex-direction : row;
+    height         : 50%;
+    width          : 50%;
+    justify-content: space-between;
+    list-style     : none;
+    font-size      : 25px;
+    font-family    : 'Montserrat', sans-serif;
+    padding-right  : 35px;
+    color          : #ffff;
+    align-items    : center;
+    cursor         : pointer;
+}
+
+.container li {
+    display       : flex;
+    flex-direction: row;
+}
+
+.container li:hover {
+    font-size  : 28px;
+    font-weight: bold;
+}
+
+.container ul {
+    width          : 100%;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color          : #ffff;
+}
+
+.divImagemCallCenter {
+    background-color: #1C658C;
+    width           : 100%;
+    height          : 100vh;
+    box-shadow      : #fafafa;
+}
+
+.imagemCallCenter {
+    background-image : url(../img/mulherCallCenter.png);
+    background-size  : cover;
+    background-repeat: no-repeat;
+    width            : 100%;
+    height           : 100vh;
+    border-radius    : 60px;
+}
+
+.divTextoChamada {
+    height         : 100vh;
+    display        : flex;
+    justify-content: center;
+    flex-direction : column;
+    margin-left    : 2%;
+}
+
+.textoChamada {
+    cursor   : default;
+    font-size: 40px;
+    color    : #ffff;
+}
+
+.nome {
+    font-family: alexBrush;
+}
+
+.textoChamadaDois {
+    font-size: 20px;
+    color    : #ffff;
+}
+
+.chamadaCadastro {
+    font-size: 20px;
+    color    : #ffff;
+    cursor   : default;
+}
+
+.divBotoes {
+    justify-content: flex-end;
+}
+
+.botaoCadastro {
+    width           : 15%;
+    height          : 8vh;
+    background-color: #1C658C;
+    border-radius   : 10px;
+    color           : #ffff;
+    font-size       : 20px;
+    border          : #1C658C solid 2px;
+    font-weight     : bold;
+    cursor          : pointer;
+}
+
+.botaoCadastro:hover {
+    box-shadow: 0px 3px 10px #fff;
+}
+
+.botaoLogin {
+    width           : 15%;
+    height          : 8vh;
+    background-color: #ffff;
+    border-radius   : 10px;
+    border          : #1C658C solid 3px;
+    color           : #1C658C;
+    font-size       : 20px;
+    font-weight     : bold;
+    cursor          : pointer;
+}
+.botaoLogin a{
+    color: #1C658C;
+}
+
+.botaoLogin:hover {
+    box-shadow: 0px 3px 10px #1C658C;
+}
+
+.problemasEmpresas {
+    background-color: #1C658C;
+    width           : 100%;
+    padding-top     : 5%;
+}
+
+.tituloProblemaEmpresa {
+    cursor     : default;
+    color      : #fff;
+    font-size  : 45px;
+    display    : flex;
+    margin-left: 3%;
+    font-family: montserrat;
+    cursor     : default;
+}
+
+.todasDivProblemas {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+}
+
+.tresDivProblemas {
+    width          : 80%;
+    padding        : 60px;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+    align-items    : center;
+}
+
+.duasDivProblemas {
+    width          : 80%;
+    padding        : 30px;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+    align-items    : center;
+}
+
+.divProblemas {
+    background-color: #fff;
+    width           : 20%;
+    height          : 30vh;
+    border-radius   : 10px;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-around;
+    align-items     : center;
+    cursor          : default;
+}
+
+.divProblemas img {
+    width            : 40%;
+    height           : 40%;
+    margin-top       : 3%;
+    padding          : 10px;
+    background-size  : cover;
+    background-repeat: no-repeat;
+}
+
+.divProblemas .title-subtitle {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    margin-bottom  : 20%;
+    font-family    : montserrat;
+    cursor         : default;
+}
+
+.divProblemas .title {
+    font-size  : 20px;
+    font-weight: 400;
+    cursor     : default;
+}
+
+.divProblemas .subtitle {
+    font-size  : 20px;
+    font-weight: 400;
+    cursor     : default;
+}
+
+.spanNossosServicos {
+    font-size  : 40px;
+    font-family: montserrrat;
+    color      : #fff;
+    cursor     : default;
+    margin-left: 3%;
+}
+
+.nossasSolucoes {
+    background-color: #fff;
+    width           : 100%;
+    cursor          : default;
+}
+
+.tituloNossosServicos {
+    color      : #1C658C;
+    font-size  : 60px;
+    display    : flex;
+    font-family: montserrat;
+    padding    : 40px;
+    cursor     : default;
+}
+
+.containerSolucoes {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.imgCallCenter {
+    margin-right    : 3%;
+    width           : 35rem;
+    height          : 22rem;
+    background-color: #1C658C;
+    border-radius   : 30px;
+    padding         : 6px;
+}
+
+.imgCallCenter img {
+    width        : 100%;
+    height       : 100%;
+    border-radius: 30px;
+}
+
+.todasDivSolucoes {
+    width          : 80%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+}
+
+.tresDivSolucoes {
+    width          : 80%;
+    padding        : 60px;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+    align-items    : center;
+}
+
+.duasDivSolucoes {
+    width          : 80%;
+    padding        : 60px;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+    align-items    : center;
+}
+
+.divSolucoes {
+    background-color: #1C658C;
+    width           : 25%;
+    height          : 30vh;
+    border-radius   : 10px;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-around;
+    align-items     : center;
+}
+
+.divSolucoes img {
+    width            : 40%;
+    height           : 40%;
+    margin-top       : 3%;
+    padding          : 10px;
+    background-size  : cover;
+    background-repeat: no-repeat;
+}
+
+.divSolucoes .title-subtitle {
+    display        : flex;
+    color          : #fff;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    margin-bottom  : 20%;
+    font-family    : montserrat;
+}
+
+.divSolucoes .title {
+    font-size  : 20px;
+    font-weight: 400;
+}
+
+.divSolucoes .subtitle {
+    font-size  : 20px;
+    font-weight: 400;
+}
+
+.localizacao {
+    width           : 100%;
+    background-color: #398AB9;
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-around;
+    align-items     : center;
+    cursor          : default;
+}
+
+.textosLocalizacao {
+    height         : 25%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-around;
+    align-items    : center;
+    cursor         : default;
+}
+
+.tituloLocalizacao {
+    font-size  : 50px;
+    font-family: montserrat;
+    color      : #fff;
+    font-weight: bold;
+    cursor     : default;
+}
+
+.textoLocalizacao {
+    font-size  : 15px;
+    line-height: 20px;
+    font-family: montserrat;
+    color      : #fff;
+    cursor     : default;
+}
+
+.inputLocalizacao {
+    margin-top   : 3%;
+    font-family  : montserrat;
+    width        : 60%;
+    padding      : 10px;
+    outline      : none;
+    border       : 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.containerSobreNos .sobreNos {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    width          : 100%;
+    margin-top     : 1rem;
+    cursor         : default;
+}
+
+.sobreNos {
+    width           : 100vw;
+    height          : 100%;
+    background-color: #fafafa;
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-around;
+    align-items     : center;
+}
+
+.textoSobreNos {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    flex-direction : column;
+    width          : 50%;
+    height         : 100%;
+    text-align     : center;
+    line-height    : 40px;
+}
+
+.tituloConheca {
+    color      : #1C658C;
+    font-weight: bold;
+    font-size  : 60px;
+    font-family: montserrat;
+}
+
+.fraseSegundaria {
+    color      : #1C658C;
+    font-size  : 40px;
+    font-family: montserrat;
+    cursor     : default;
+}
+
+.divBotao {
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.divBotao button {
+    height: 50px;
+}
+
+.botaoSobreNos {
+    width           : 50%;
+    height          : 10%;
+    background-color: #fff;
+    color           : #1C658C;
+    font-size       : 30px;
+    font-family     : montserrat;
+    border          : 3px solid #1C658C;
+    border-radius   : 20px;
+    cursor          : pointer;
+    margin-bottom   : 5%;
+}
+
+.botaoSobreNos a {
+    text-decoration: none;
+    color          : #1C658C;
+}
+
+.informacoes {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    justify-content : center;
+    width           : 100%;
+    background-color: #1C658C;
+}
+
+.informacoes p {
+    color      : #ffff;
+    text-align : center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.informacoes img {
+    height: 30%;
+    width : 30%;
+    filter: invert(100%);
+}
+
+.socialMedias {
+    height         : 100%;
+    display        : flex;
+    justify-content: space-between;
+    width          : 10%;
+}
+
+.socialMedias li {
+    margin: 0 10px;
+}
+
+.socialMedias a {
+    text-decoration: none;
+    color          : #FCFEF0;
+    font-size      : 40px;
+
+}
+
+@media(max-width: 990px) {
+
+    .tituloProblemaEmpresa {
+        cursor       : default;
+        color        : #fff;
+        font-size    : 37px;
+        display      : flex;
+        margin-left  : 3%;
+        font-family  : montserrat;
+        margin-bottom: 9%;
+    }
+
+    .divTitulo {
+        width      : 26%;
+        font-size  : 30px;
+        text-align : center;
+        color      : #ffff;
+        font-family: alexBrush;
+        cursor     : default;
+    }
+
+    .container {
+        display        : flex;
+        flex-direction : row;
+        height         : 50%;
+        width          : 50%;
+        justify-content: space-between;
+        list-style     : none;
+        font-size      : 14px;
+        font-family    : 'Montserrat', sans-serif;
+        padding-right  : 35px;
+        color          : #ffff;
+        align-items    : center;
+        cursor         : pointer;
+    }
+
+    .container li:hover {
+        font-size  : 15px;
+        font-weight: bold;
+    }
+
+    .divBotoes {
+        justify-content: space-around;
+        display        : flex;
+    }
+
+    .botaoCadastro {
+        width           : 30%;
+        height          : 8vh;
+        background-color: #1C658C;
+        border-radius   : 10px;
+        color           : #ffff;
+        font-size       : 20px;
+        border          : #1C658C solid 2px;
+        font-weight     : bold;
+    }
+
+    .botaoLogin {
+        width           : 30%;
+        height          : 8vh;
+        background-color: #ffff;
+        border-radius   : 10px;
+        border          : #1C658C solid 3px;
+        color           : #1C658C;
+        font-size       : 20px;
+        font-weight     : bold;
+    }
+
+    .problemasEmpresas {
+        background-color: #1C658C;
+        width           : 100%;
+        padding-top     : 5%;
+    }
+
+    .duasDivProblemas {
+        width         : 100%;
+        padding       : 0px;
+        display       : flex;
+        flex-direction: row;
+        align-items   : center;
+        flex-flow     : column;
+    }
+
+    .tresDivProblemas {
+        padding        : 0px;
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-evenly;
+        align-items    : center;
+    }
+
+    .divProblemas {
+        background-color: #fff;
+        width           : 45%;
+        height          : 30vh;
+        border-radius   : 10px;
+        display         : flex;
+        flex-direction  : column;
+        justify-content : space-around;
+        align-items     : center;
+        margin-bottom   : 19px;
+    }
+
+    #quedaIntenet {
+        width: 36%;
+    }
+
+    #mauDesempenho {
+        width: 36%;
+    }
+
+    .nossasSolucoes {
+        background-color: #fff;
+        width           : 100%;
+        display         : flex;
+        flex-direction  : column;
+    }
+
+    .tresDivSolucoes {
+        width          : 100%;
+        padding        : 0px;
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-evenly;
+        align-items    : center;
+    }
+
+    .duasDivSolucoes {
+        width          : 80%;
+        padding        : 0px;
+        display        : flex;
+        flex-direction : row;
+        justify-content: space-evenly;
+        align-items    : center;
+        flex-direction : column;
+    }
+
+    #consulta {
+        width: 66%;
+    }
+
+    #assistencia {
+        width: 66%;
+    }
+
+    .divProblemas .subtitle {
+        font-size  : 18px;
+        font-weight: 400;
+    }
+
+    .divProblemas .title {
+        font-size  : 17px;
+        font-weight: 400;
+    }
+
+    .divSolucoes {
+        background-color: #1C658C;
+        width           : 53%;
+        height          : 49%;
+        border-radius   : 10px;
+        display         : flex;
+        flex-direction  : column;
+        justify-content : space-around;
+        align-items     : center;
+        margin-bottom   : 5%;
+    }
+
+    .imgCallCenter {
+        display: none;
+    }
+
+    .containerSobreNos .sobreNos {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        width          : 100%;
+        margin-top     : 1rem;
+        cursor         : default;
+    }
+
+    .tituloLocalizacao {
+        font-size  : 37px;
+        font-family: montserrat;
+        color      : #fff;
+        font-weight: bold;
+        cursor     : default;
+    }
+
+    .localizacao {
+        width           : 100%;
+        background-color: #398AB9;
+        display         : flex;
+        flex-direction  : column;
+        justify-content : space-around;
+        align-items     : center;
+        cursor          : default;
+    }
+
+    .imgBrasil img {
+        height       : 300px;
+        margin-top   : 10%;
+        margin-bottom: 3%;
+    }
+
+    .tituloConheca {
+        color      : #1C658C;
+        font-weight: bold;
+        font-size  : 37px;
+        font-family: montserrat;
+    }
+
+    .fraseSegundaria {
+        color      : #1C658C;
+        font-size  : 32px;
+        text-align : center;
+        font-family: montserrat;
+        cursor     : default;
+    }
+
+    .divBotao button {
+        height: 50px;
+        width : 83%;
+    }
+
+    .botaoSobreNos {
+        width           : 50%;
+        height          : 10%;
+        background-color: #fff;
+        color           : #1C658C;
+        font-size       : 30px;
+        font-family     : montserrat;
+        border          : 3px solid #1C658C;
+        border-radius   : 20px;
+        cursor          : pointer;
+        margin-bottom   : 7%;
+    }
+
+
+
+}

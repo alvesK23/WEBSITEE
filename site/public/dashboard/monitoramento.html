@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Call++</title>
+    <link rel="shortcut icon" href="../../imagens/monitoramento.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/monitoramento.css">
+    <link rel="shortcut icon" href="../assets/img/monitoramento.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/foto2.js"></script>
+
+    <script>
+        window.fwSettings = {
+            'widget_id': 73000003121
+        };
+        !function () { if ("function" != typeof window.FreshworksWidget) { var n = function () { n.q.push(arguments) }; n.q = [], window.FreshworksWidget = n } }() 
+    </script>
+    <script type='text/javascript' src='https://widget.freshworks.com/widgets/73000003121.js' async defer></script>
+</head>
+
+<body onload="validarSessao();fotocarrega()">
+    <input type="checkbox" id="check">
+    <!--header começo-->
+    <header>
+        <label for="check">
+            <ion-icon name="menu-outline" id="sidebar_btn" onclick="recolher()"></ion-icon>
+            <ion-icon name="menu-outline" id="sidebar_btn2" onclick="expandir()"></ion-icon>
+        </label>
+        <div class="left">
+            <h3>Call <span>++</span></h3>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <center>
+            <div id="fotoaqui"></div>
+            <!--  <button onclick="window.location.href ='inicio.html#editandoft'" class="newft">New foto</button> </div>-->
+            <h2><span id="b_usuario">Seu Nome</span></h2>
+        </center>
+        <a href="inicio.html" data-tooltip="Dashboard" id="inicio">
+            <ion-icon name="home-outline"></ion-icon><span>Dashboard</span>
+        </a>
+        <a href="registro.html" data-tooltip="Ocorrências">
+            <ion-icon name="folder-outline"></ion-icon><span>Ocorrências</span>
+        </a>
+        <a href="centralDeServicos.html" data-tooltip="Resolução">
+            <ion-icon name="build-outline"></ion-icon><span>Resolução</span>
+        </a>
+        <a onclick="limparSessao()" data-tooltip="Sair">
+            <ion-icon name="exit-outline"></ion-icon><span>Sair</span>
+        </a>
+    </div>
+
+
+    <!--sidebar final-->
+
+
+    <div class="conteiner_grafico" id="conteudo">
+        <div class="graf">
+            <div class="conteine_hardware">
+                <h4>Deseja inserir um novo <b>Limite para seus hardwares?</b> <button id="myBtn" class="button">NOVO
+                        LIMITE</button></h4>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Limite de monitoramento</p>
+
+                        <div>
+                            <div class="inputs-container">
+                                <span>Limite de Disco: </span>
+                                <input id="inpt_disco" placeholder="digite um limite">
+                            </div>
+
+                            <div class="inputs-container">
+                                <span>Limite de CPU: </span>
+                                <input id="inpt_cpu" placeholder="digite um limite">
+                            </div>
+
+                            <div class="inputs-container">
+                                <span>Limite de Memoria: </span>
+                                <input id="inpt_memoria" placeholder="digite um limite">
+                            </div>
+
+                            <div class="inputs-container">
+                                <span>Limite de Temp: </span>
+                                <input id="inpt_temp" placeholder="digite um limite"> 
+                            </div>
+                        </div>
+
+                        <button class="button" onclick="novolimite()">ALTERAR</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="conteiner_graf">
+                <div class="conteiner_caixaGraficos">
+                    <div class="harware_nome">
+                        <span>
+                            Armazenamento Disco
+                        </span>
+                        <span>
+                            <span id="totalds"></span>
+                        </span>
+                    </div>
+                    <div id="disco" class="caixaGraficos">
+                        <canvas id="myChartdisco" style="width: 100%; height: 100%;"></canvas>
+                    </div>
+
+                    <div class="rodape_caixaGraficos">
+                        <div class="rodape_caixaGraficos">
+                            <div class="hardware_porcentagem">
+                                <span>
+                                    <b>
+                                        Utilização
+                                    </b>
+                                </span>
+                                <span>
+                                    <span id="porcentodisco"></span>
+                                </span>
+                            </div>
+                            <div class="hardware_porcentagem">
+                                <span>
+                                    <b>Disponível</b>
+                                </span>
+                                <span>
+                                    <span id="porcentagemdisponiveldisc"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="conteiner_caixaGraficos">
+                    <div class="harware_nome">
+                        <span>Memória RAM <br>
+                            <span>
+
+                            </span>
+                        </span>
+                        <span id="total_memoria"></span>
+                    </div>
+                    <div id="memoria" class="caixaGraficos">
+                        <canvas id="myChartM" style="width: 100%; height: 100%;"></canvas>
+
+                    </div>
+                    <div class="rodape_caixaGraficos">
+                        <div>
+                            <div class="hardware_porcentagem">
+                                <span>
+                                    <b>
+                                        Utilização
+                                    </b>
+                                </span>
+                                <span id="porcento_memoria"></span>
+                            </div>
+                            <div class="hardware_porcentagem">
+                                <span>
+                                    <b>
+                                        Disponível
+                                    </b>
+                                </span>
+                                <span id="porcentagen_memoria_d"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conteiner_caixaGraficos">
+                    <div class="harware_nome">
+                        <span>
+                            Temperatura
+                        </span>
+
+                    </div>
+                    <div id="temperatura" class="caixaGraficos">
+                        <canvas id="myChartTemp" style="width: 100%; height: 100%;"></canvas>
+
+                    </div>
+
+                    <div class="rodape_caixaGraficos">
+                        <div class="hardware_porcentagem">
+
+                            <div>
+                                <b>
+                                    Temperatura atual
+                                </b>
+                                <span id="temp_qtd">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="conteiner_memoria">
+                <div class="conteiner_titulos">
+                    <div class="titulos">
+                        <span id="cpu_midia">CPU</span>
+
+                        <span id="nome_processador"></span>
+                    </div>
+                </div>
+                <div id="div_processador" class="memoria">
+
+                    <canvas id="myChartProcess" style="width: 100%; height: 100%;"></canvas>
+                </div>
+                <div class="conteiner_rodape">
+                    <div class="conteiner_pai_cpu">
+                        <div class="conteiner_filho_cpu">
+                            <div>
+                                <div class="hardware_porcentagem_cpu">
+                                    <span>
+                                        <b>
+                                            Utilização
+                                        </b>
+                                    </span>
+                                    <span id="utilizacaocpu">
+                                        40%
+                                    </span>
+                                </div>
+                                <div class="hardware_porcentagem_cpu">
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="conteiner_filho">
+                            <div>
+
+                                <div class="hardware_porcentagem_cpu" id="tempo">
+                                    <span>
+                                        <b>
+                                            Tempo de Utilização
+                                        </b>
+                                    </span>
+                                    <span id="data_hora">
+                                        s
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>
+
+<script>
+    sidebar_btn2.style.display = "none"
+    function recolher() {
+
+        conteudo.style.paddingLeft = "100px"
+        conteudo.style.transition = "0.8s"
+        sidebar_btn.style.display = "none"
+        sidebar_btn2.style.display = "block"
+        document.getElementById("fotoaqui").style.display = "none"
+
+    }
+    function expandir() {
+
+        conteudo.style.paddingLeft = "250px"
+        conteudo.style.transition = "0.5s"
+        sidebar_btn.style.display = "block"
+        sidebar_btn2.style.display = "none"
+        document.getElementById("fotoaqui").style.display = "block";
+
+    }
+</script>
+<script src="./js/graficos.js"></script>
+<script type="text/javascript">
+
+
+</script>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<script>
+
+    function novolimite() {
+        var vardisco = inpt_disco.value;
+        var varcpu = inpt_cpu.value;
+        var varmemoria = inpt_memoria.value;
+        var vartemperatura = inpt_temp.value;
+        var varhostname = sessionStorage.hostname;
+
+        fetch("/graficos/novolimite", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                disco: vardisco,
+                cpu: varcpu,
+                memoria: varmemoria,
+                temp: vartemperatura,
+                hostname: varhostname
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Novo limite inserido!");
+                window.location = "monitoramento.html";
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+
+</script>

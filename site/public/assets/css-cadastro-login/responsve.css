@@ -1,0 +1,96 @@
+
+
+@media screen and (max-width: 446px) {
+    /* celulares*/
+
+    .form_login {
+        height: 46vh;
+        
+    }
+
+    body::-webkit-scrollbar {
+        width : 11px;
+        border: 1px rgb(200, 200, 200);
+    }
+    
+    body::-webkit-scrollbar-thumb {
+        border-radius   : 5px;
+        background-color: #1C658C;
+    }
+}
+
+
+@media screen and (min-width: 0) {
+    /* celulares*/
+    .conteudo {
+        height: calc(100vh - 8vh);
+    }
+}
+
+
+@media screen and (min-width: 430px) {
+    .conteudo {
+        height: calc(100vh - 8vh);
+    }
+
+    .form {
+        height: auto;
+        width: 70vw;
+    }
+
+    .form_login {
+        height: 30vh;
+        
+    }
+
+    body::-webkit-scrollbar {
+        width : 11px;
+        border: 1px rgb(200, 200, 200);
+    }
+    
+    body::-webkit-scrollbar-thumb {
+        border-radius   : 5px;
+        background-color: #1C658C;
+    }
+
+}
+
+@media screen and (min-width: 556px) {
+    .conteudo {
+        height: calc(100vh - 10vh);
+    }
+
+    .form {
+        height: 70vh;
+        width: 70vw;
+    }
+
+    
+    /*tablets */
+    .navbar {
+        height: 10vh;
+    }
+}
+
+@media screen and (min-width: 992) {
+    /* desktops antigos*/
+
+}
+
+@media screen and (min-width: 1200px) {
+    /*desktops novos e tvs */
+
+
+}
+/*inserir alturas abaixo onde quebra: 525 */
+
+
+
+@media screen and (max-height: 525px) {
+    /* celulares*/
+
+    .form_login {
+        height: 50vh;
+        
+    }
+}

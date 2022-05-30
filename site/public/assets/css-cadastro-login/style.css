@@ -1,0 +1,53 @@
+@font-face {
+    font-family: alexBrush;
+    src: url(./AlexBrush-Regular.ttf);
+    font-family: montserrat;
+    src: url(./Montserrat-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    font-size  : 28px;
+    font-weight: bold;
+}
+
+.logo {
+    font-family: alexBrush;
+    font-size: 30px;
+    margin-left: 25px;
+    text-transform: uppercase;
+    letter-spacing: 4px;  
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    background: #1C658C;
+    align-items: center;
+    margin: 0 auto;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.nav-list {
+    margin-right: 55px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-list li {
+    font-size: 25px;
+    letter-spacing: 3px;
+    margin-left: 35px;
+}

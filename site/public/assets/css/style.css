@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.background {
+    background-image: url("../img/background.jpg");
+    height: 100vh;
+}
+
+.header {
+    color: #0096ff;
+    border-bottom: 3px solid transparent;
+    /* border: 3px solid yellow; */
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    /* border: 3px solid pink; */
+}
+
+.header .container img {
+    width: 17vw;
+    height: 10vh;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+.header .cadastro {
+    cursor: pointer;
+    background-color: transparent;
+    border: solid;
+    border-left: 1px;
+    border-top: 1px;
+    color: white;
+    border-color: #e3b062;
+    font-size: 23px;
+}
+
+.header .cadastro:hover {
+    border-color: #9cf0e1;
+}
+
+.header .login {
+    cursor: pointer;
+    background-color: transparent;
+    border: solid;
+    border-right: 1px;
+    border-top: 1px;
+    color: white;
+    border-color: #9cf0e1;
+    font-size: 23px;
+}
+
+.header .login:hover {
+    border-color: #e3b062;
+}
+
+.header a:hover {
+    text-decoration: none;
+    color: #e3b062;
+    text-decoration: underline;
+}
+
+.agora {
+    font-weight: 800;
+}
+
+.agora:hover {
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar {
+    font-size: 22px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    color: white;
+}
+
+* BANNER */ .banner {
+    height: 500px;
+    color: white;
+    /* border: 3px solid yellow; */
+    background-image: url(".././assets/imgs/bg-jelly-fish-para_outras_pags.png");
+    background-size: cover;
+}
+
+.banner .container {
+    /* border: 3px solid green; */
+    height: 500px;
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.banner p {
+    /* border: 3px solid cyan; */
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    width: 280px;
+    font-size: 36px;
+    margin-left: 350px;
+    font-size: 40px;
+}
+
+.banner p::after {
+    content: '|';
+    opacity: 1;
+    margin-left: 5px;
+    display: inline-block;
+    animation: blink .7s infinite;
+}
+
+.banner #button {
+    /* border: 3px solid cyan; */
+    width: 10%;
+    background: #9cf0e1;
+    color: #000;
+    border: 0;
+    border-radius: 100px;
+    font-weight: 600;
+    line-height: 52px;
+    margin-left: -20%;
+    margin-top: 26%;
+    font-size: 18px;
+}
+
+.banner #button:hover {
+    background-color: #e3b062;
+}
+
+.banner span {
+    font-weight: 800;
+}
+
+
+/* missao visao valores */
+
+.social {
+    background-color: #e5e5e5;
+    /* border: 3px solid yellowgreen; */
+    padding: 50px 0;
+    background-image: url(https://static.soundtrap.com/public/images/musicmakers/img-musicmaker-collaborate-01-small_1.webp);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.social .container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    /* border: 3px solid blue; */
+}
+
+
+/* usar este bloco para explicar margin e padding*/
+
+.social .titulo {
+    /* border: 3px solid pink; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-left: 500px;
+}
+
+.social h2 {
+    font-size: 50px;
+    display: flex;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    color: #28183e;
+    margin: 0;
+    /* border: 3px solid orange; */
+}
+
+.social h2::after {
+    content: '|';
+    opacity: 1;
+    margin-left: 5px;
+    display: inline-block;
+    animation: blink .7s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* background-image: url(../img/yokai.jpg);*/
+
+.social {
+    background-color: #1e1e1e;
+}
+
+.social .container h2 {
+    color: #FFFF;
+}
+
+.social .boxes {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 26%;
+    height: 30vh;
+    margin: 2%;
+    background-image: url(../img/yokai.jpg);
+    background-size: 100%;
+    border: solid;
+    border-radius: 18px;
+    border-style: solid;
+    border-color: #adadad;
+}
+
+.social .box2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 26%;
+    height: 30vh;
+    margin: 2%;
+    background-image: url(../img/esperando.jpg);
+    background-size: 100%;
+    border: solid;
+    border-radius: 18px;
+    border-style: solid;
+    border-color: #adadad;
+}
+
+.social .boxes :hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/*social fim*/
+
+.colabore {
+    background-image: url(../img/img1.webp);
+    background-repeat: no-repeat;
+    background-position-y: 8%;
+    height: 100vh;
+}
+
+.colabore .boxes1 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.colabore .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    height: 30vh;
+    margin: 2%;
+    background-size: 100%;
+    margin-top: 12%;
+}
+
+.boxes1 .box p {
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.box img {
+    width: 50%;
+    display: flex;
+    align-self: center;
+}
+
+.footer {
+    background-color: #29193e;
+    display: flex;
+    justify-content: center;
+}
+
+.footer p {
+    color: white;
+    white-space: pre;
+}
+
+.footer .container1 {
+    color: white;
+    display: flexbox;
+    margin-top: 2%;
+}
+
+.footer .container1 .imgs {
+    display: flexbox;
+    margin-left: 27%;
+}
+
+.footer .container1 img {
+    width: 15%;
+    margin: 1%;
+}
+
+.footer .container1 img:hover {
+    width: 20%;
+    margin: 2%;
+}
+
+
+/*modal cadastro*/
+
+.cadastromodel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.cadastromodel:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: white;
+    border-width: 30px;
+    border: solid;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    color: black;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    display: flex;
+    justify-content: center;
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}
+
+
+/*fim modal cadastro*/
+
+
+/*inputs jeito*/
+
+fieldset {
+    border: none;
+}
+
+fieldset:nth-child(1) {
+    display: flex;
+}
+
+fieldset:nth-child(2) {
+    display: flex;
+}
+
+fieldset:nth-child(3) {
+    display: flex;
+}
+
+fieldset:nth-child(4) {
+    display: flex;
+}
+
+.form-v-001 {
+    outline: none;
+    width: 40%;
+    height: 4vh;
+    margin: 2%;
+    border-radius: 18px;
+    border: solid;
+    border-color: #29193e;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #ededed;
+    color: #29193e;
+    font-size: 16px;
+}
+
+.form-v-001:hover {
+    border-color: #e3b062;
+}
+
+#combobox {
+    width: 42.5%;
+    height: 4.6vh;
+}
+
+
+/*fim inputs*/
+
+.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8%;
+}
+
+.check span {
+    font-weight: 600;
+}
+
+.check a {
+    color: #02365d;
+}
+
+.btncadastro {
+    cursor: pointer;
+    margin-left: 130px;
+    display: block;
+    width: 20vw;
+    height: 7vh;
+    color: #FFFF;
+    background-color: #02365d;
+    border-style: solid;
+    border-radius: 10px;
+    margin-top: 3%;
+}
+
+.btncadastro:hover {
+    background-color: #F09C33;
+}
+
+.btnlogin {
+    cursor: pointer;
+    margin-left: 70px;
+    display: block;
+    width: 20vw;
+    height: 7vh;
+    color: #FFFF;
+    background-color: #02365d;
+    border-style: solid;
+    border-radius: 10px;
+    margin-top: 3%;
+}
+
+.btnlogin:hover {
+    background-color: #F09C33;
+}
+
+.loading-div {
+    width: 50px;
+    /* border: 3px solid pink; */
+    margin: auto;
+    display: none;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+
+/*modal login*/
+
+.loginmodel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.loginmodel:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: white;
+    border-width: 30px;
+    border: solid;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    color: black;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    display: flex;
+    justify-content: center;
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}
+
+
+/*fim modal login*/
+
+
+/*modal sobre*/
+
+
+/*modal login*/
+
+.sobre {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    background-image: url(../img/img4.webp);
+    background-position-x: 200%;
+    background-repeat: no-repeat;
+}
+
+.sobre:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: white;
+    border-width: 30px;
+    border: solid;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    color: black;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    display: flex;
+    justify-content: center;
+    max-height: 30%;
+    overflow: auto;
+}
+
+.sobre .popup .content {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}
+
+
+/*fim modal sobre*/
