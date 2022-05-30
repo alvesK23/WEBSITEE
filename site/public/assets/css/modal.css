@@ -420,7 +420,7 @@ label .sidebar_btn:hover {
     height: 2rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1300px) {
     .sidebar span, .sidebar img, .sidebar h2, label #sidebar_btn, label #sidebar_btn2 {
         display: none;
     }   
@@ -506,11 +506,8 @@ label .sidebar_btn:hover {
 .rTable th, .rTable td {
     padding: .4rem 0;
 }
-@media screen and (max-width: 760px) {
+@media (max-width: 1300px){
 
-  #fotoaqui{
-    display: none;
-  }
     .content {
         width: 80%;
     }
@@ -522,7 +519,7 @@ label .sidebar_btn:hover {
         flex-direction: column;
     }
 }
-@media only screen and (min-width: 1200px) {
+@media (max-width: 1300px){
     .content {
         width: 90%;
     }
@@ -550,6 +547,12 @@ label .sidebar_btn:hover {
     }
 }
 
+@media (max-width: 1300px){
+    #fotoaqui{
+        display: none;
+      }
+    
+}
 #spanRegistro{
   cursor: pointer;
 }
