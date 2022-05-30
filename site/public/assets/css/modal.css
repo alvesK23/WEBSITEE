@@ -2,6 +2,21 @@
     display: none;
   }
   
+  #fotoaqui {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("");
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
   #dialog {
     position: absolute;
     z-index: 9999;
@@ -506,17 +521,26 @@ label .sidebar_btn:hover {
 .rTable th, .rTable td {
     padding: .4rem 0;
 }
-@media (max-width: 1300px){
+@media (max-width: 1000px){
 
     .content {
         width: 80%;
+    }
+    .content tr {
+        display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+   
+
     }
     .rTable thead {
         display: none;
     }
     .rTable tbody td {
+
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+    
     }
 }
 @media (max-width: 1300px){
